@@ -9,7 +9,7 @@ class UsuariosController {
     //Listado de usuarios del sistema
     async consultar(req: Request, res:Response) {
         try {
-            const data = await Usuario.find();
+            const data = await Usuario.find({relations: {roles:true}});
             res.status(200).json(data)
         } catch (err) {
             if(err instanceof Error)

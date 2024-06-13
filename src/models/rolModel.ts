@@ -7,7 +7,7 @@ export class Rol extends BaseEntity{
     id: number;
 
     @Column()
-    nombre: String;
+    nombre: string;
 
     @CreateDateColumn()
     createdAt: Date;
@@ -15,11 +15,6 @@ export class Rol extends BaseEntity{
     @UpdateDateColumn()
     updatedAt: Date;
 
-    @ManyToMany(() => Usuario)
-    @JoinTable({
-        name: 'roles_usuarios',
-        joinColumn: { name: 'rol_id' },
-        inverseJoinColumn: { name: 'usuario_id' }
-    })
+    @ManyToMany(() => Usuario, usuario => usuario.roles)
     usuarios: Usuario[];
 }
