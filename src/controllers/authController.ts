@@ -6,10 +6,12 @@ import { generarToken } from '../helpers/tokenHelper';
 class AuthController {
     constructor() {}
 
+    //Prueba
     async saludar(req: Request, res: Response) {
         res.send('Saluditos desde ruta protegida');
     }
 
+    //Login y llamado a 'tokenHelper'
     async consultarUsuario(req: Request, res: Response) {
         const { correo, contrasenia } = req.body;
 
@@ -35,6 +37,7 @@ class AuthController {
         }
     }
 
+    //Registro de Usuarios
     async registrarUsuario(req: Request, res: Response) {
         try {
             req.body.contrasenia = bcrypt.hashSync(req.body.contrasenia, 10);

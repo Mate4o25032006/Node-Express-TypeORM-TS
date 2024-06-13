@@ -6,6 +6,7 @@ import profesoresRoutes from  './routes/profesoresRoutes';
 import cursosRoutes from './routes/cursosRoutes';
 import usuariosRoutes from './routes/usuariosRoutes'
 import authRoutes from './routes/authRoutes'
+import rolesRoutes from './routes/rolesRoutes'
 import { Request, Response } from "express";
 import bodyParser from 'body-parser';
 
@@ -31,6 +32,8 @@ app.use("/profesores", profesoresRoutes);
 app.use("/cursos", cursosRoutes);
 app.use("/usuarios", usuariosRoutes);
 app.use("/auth", authRoutes);
+app.use("/roles", rolesRoutes);
+
 
 export default app;
 

@@ -3,6 +3,7 @@ import { Estudiante } from "../models/estudianteModel";
 import { Profesor } from "../models/profesorModel";
 import { Curso } from "../models/cursoModel";
 import { Usuario } from "../models/usuarioModel";
+import { Rol } from "../models/rolModel";
 
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -12,6 +13,6 @@ export const AppDataSource = new DataSource({
     password: "",
     database: "cursos",
     logging: true,
-    entities: [Estudiante, Profesor, Curso, Usuario],
+    entities: [Estudiante, Profesor, Curso, Usuario, Rol],
     synchronize: false
 })

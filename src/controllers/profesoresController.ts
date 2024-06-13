@@ -6,6 +6,7 @@ class ProfesoresController {
 
     }
 
+    //Consultar listado de profesores
     async consultar(req: Request, res:Response) {
         try {
             const data = await Profesor.find();
@@ -16,6 +17,7 @@ class ProfesoresController {
         }
     }
 
+    //Consultar profesor en específico
     async consultarDetalle(req: Request, res:Response ) {
         const { id } = req.params;
         try {
@@ -31,6 +33,7 @@ class ProfesoresController {
         }
     }
 
+    //Registrar profesor
     async ingresar(req: Request, res:Response ) {
         try {
             const registro = await Profesor.save(req.body);
@@ -41,6 +44,7 @@ class ProfesoresController {
         }
     }
 
+    //Actualizar profesor
     async actualizar(req: Request, res:Response ) {
         const { id } = req.params;
         try {
@@ -58,6 +62,7 @@ class ProfesoresController {
         }
     }
 
+    //Eliminar profesor
     async eliminar(req: Request, res:Response ) {
         const { id } = req.params;
         try {

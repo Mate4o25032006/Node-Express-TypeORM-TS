@@ -6,6 +6,7 @@ class EstudiantesController {
 
     }
 
+    //Consultar listado de estudiantes
     async consultar(req: Request, res:Response) {
         try {
             const data = await Estudiante.find();
@@ -16,6 +17,7 @@ class EstudiantesController {
         }
     }
 
+    //Consultar estudiante en específico
     async consultarDetalle(req: Request, res:Response ) {
         const { id } = req.params;
         try {
@@ -31,6 +33,7 @@ class EstudiantesController {
         }
     }
 
+    //Registrar estudiante
     async ingresar(req: Request, res:Response ) {
         try {
             const registro = await Estudiante.save(req.body);
@@ -41,6 +44,7 @@ class EstudiantesController {
         }
     }
 
+    //Actualizar estudiante
     async actualizar(req: Request, res:Response ) {
         const { id } = req.params;
         try {
@@ -58,6 +62,7 @@ class EstudiantesController {
         }
     }
 
+    //Eliminar Estudiante
     async eliminar(req: Request, res:Response ) {
         const { id } = req.params;
         try {

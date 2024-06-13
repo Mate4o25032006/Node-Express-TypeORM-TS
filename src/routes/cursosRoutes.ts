@@ -12,6 +12,7 @@ router.post('/', cursosController.ingresar);
 
 //Ruta POST para los Asociar estudiante
 router.post('/registraEstudiante', cursosController.asociarEstudiante);
+
 //Solo hay un punto donde usamos el '/:id'
 router.route("/:id")
     .get(cursosController.consultarDetalle)

@@ -8,6 +8,7 @@ class CursosController {
 
     }
 
+     //Consultar listado de Cursos
     async consultar(req: Request, res:Response) {
         try {
             const data = await Curso.find({relations: {profesor: true, estudiantes: true}});
@@ -18,6 +19,7 @@ class CursosController {
         }
     }
 
+     //Consultar curso específico
     async consultarDetalle(req: Request, res:Response ) {
         const { id } = req.params;
         try {
@@ -33,6 +35,7 @@ class CursosController {
         }
     }
 
+    //Registrar curso
     async ingresar(req: Request, res:Response ) {
         try {
             //Obtenemos el atributo
@@ -52,6 +55,7 @@ class CursosController {
         }
     }
 
+    //Actualizar Curso
     async actualizar(req: Request, res:Response ) {
         const { id } = req.params;
         try {
@@ -76,6 +80,7 @@ class CursosController {
         }
     }
 
+    //Eliminar Curso
     async eliminar(req: Request, res:Response ) {
         const { id } = req.params;
         try {
@@ -93,6 +98,7 @@ class CursosController {
         }
     }
 
+    //Asociar estudiante a curso
     async asociarEstudiante(req: Request, res:Response ) {
         const { id } = req.params;
         try {
