@@ -1,11 +1,13 @@
 import { Request, Response, NextFunction } from 'express';
-import { AppDataSource } from '../db/conexion'; // Asegúrate de importar el DataSource configurado
+import { AppDataSource } from '../db/conexion'; 
 import { Usuario } from '../models/usuarioModel';
+
+//Middleware para Validar Rol antes de entrar al controlador
 
 //Recibimos un Arreglo con los roles permitidos
 const validarRol = (rolesPermitidos: string[]) => {
     return async (req: Request, res: Response, next: NextFunction) => {
-        //Accedemos al Request que viene del cuerpo de la 
+        //Accedemos al Request que viene del cuerpo de la solicitud
         const usuario = (req as any).user;
         console.log(usuario);
         

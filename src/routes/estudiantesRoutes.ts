@@ -2,7 +2,7 @@
 import express from 'express';
 import estudiantesController from '../controllers/estudiantesController'
 import verificarToken from '../middlewares/authMiddleware';
-import validarRol from '../middlewares/validatorRolMiddelware';
+import validarRol from '../middlewares/validatorRolMiddleware';
 const router = express.Router();
 
 //Ruta GET para los estudiantes

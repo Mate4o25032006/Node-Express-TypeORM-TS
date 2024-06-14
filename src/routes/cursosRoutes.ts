@@ -2,7 +2,7 @@
 import express from 'express';
 import cursosController from '../controllers/cursosController';
 import verificarToken from '../middlewares/authMiddleware';
-import validarRol from '../middlewares/validatorRolMiddelware';
+import validarRol from '../middlewares/validatorRolMiddleware';
 const router = express.Router();
 
 
